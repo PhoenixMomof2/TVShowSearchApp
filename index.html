@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relocate</title>
+    <title>TV Shows Search App</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
     <body>
-      <h1>BEST SCI FI SHOWS</h1>
-      <input type="text" id="userInput" onkeyup="searchShowList()" placeholder="Search for names..">
+      <h1>TV SHOW SEARCH BY GENRE</h1>
       <br>
-      <button onclick="sortList()">Sort</button>
-      <button id="shows">All Sci Fi Shows</button>
       <hr>
       <br>
-      <div id="main">
-        <ul id="show-list">
-            
-        </ul>
-      </div id="info"></div>
+        <div id="myBtnContainer">
+          <button class="btn" onclick="displayShowList()">All Shows</button>
+          <button class="btn" onclick="filterSelection('Science-Fiction')"> Science-Fiction</button>
+          <button class="btn" onclick="filterSelection('Drama')"> Drama</button>
+          <button class="btn" onclick="filterSelection('Thriller')"> Thriller</button>
+          <button class="btn" onclick="filterSelection('Comedy')"> Comedy</button>
+          <button class="btn" onclick="filterSelection('Action')"> Action</button>
+          <button class="btn" onclick="filterSelection('Crime')"> Crime</button>
+        </div>
+        <ul id="show-list" style="list-style-type:none;"></ul>
+      </div id="details"></div>
     </div>
       <footer class="branding">
         <small>&copy; 2022 <strong>SciFiShowApp</strong></small>
       </footer> 
       <script src="./index.js"></script>
-
     </body>
 </html>
