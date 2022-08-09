@@ -31,11 +31,15 @@ function filterSelection(genre) {
   let filteredData = showData.filter((show) => {return show.genres.includes(genre)
   })
    console.log(filteredData)
-    // filteredData.filter(show => {
-    //     ul.innerHTML += `
-    //     <li><a href="#">${show.name}</a></li>
-    //     ` 
-    // })
+   
+   const ul = document.getElementById('show-list')
+     ul.innerHTML = ''
+
+    filteredData.filter(show => {
+        ul.innerHTML += `
+        <li><a href="#">${show.name}</a></li>
+        ` 
+    })
     // clickShowLinks()
   }
   
@@ -54,8 +58,7 @@ function filterSelection(genre) {
 // const displaySelectedShow = (event) => {
 //     // console.log(event.target.dataset.genres)
 //     const details = document.getElementById('details')
-//     const ul = document.getElementById('show-list')
-//     ul.innerHTML = ''
+//     
 
     // fetch(BASE_URL + `/shows/${event.target.dataset.genres}`)
     // .then(response => response.json())
