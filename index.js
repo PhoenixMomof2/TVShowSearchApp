@@ -61,21 +61,18 @@ function fetchTvShows(){
       .then(res => res.json())
       .then(data => {
         
-        let filteredData = data.filter((show) => {return show.genres.includes(`${btn.innerText}`)})
-        console.log(filteredData)
+        let filteredData = data.filter((show) => {
+          return show.genres.includes(`${btn.innerText}`)
+        })
+           
         filteredData.forEach(show =>
           {
             let ul = document.getElementById('show-list')
-            // ul.innerHTML =''
             ul.innerHTML += `<li><a href="#" data-id="${show.id}">${show.name}</a></li>`
-            fetchTvShows(`${btn.innerText}`)
-            // reset.onclick = () => fetchTvShows(`${btn.innerText}`)
           })
         })
-        .catch(err => console.error(err))
-        
-      })
-      
+        fetchTvShows(`${btn.innerText}`)
+      }) 
     })
   })
   
