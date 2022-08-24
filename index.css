@@ -5,7 +5,6 @@ body {
 
 h1 {
   color:rgb(18, 236, 15)
-  /* font-size: 30px; */
 }
 h2 {
   color:rgb(230, 11, 11)
@@ -50,5 +49,8 @@ ul.no-bullets {
   cursor: pointer;
 }
 #reset:hover {
-  background-color: rgb(18, 236, 15);
+  background-color: rgb(193, 42, 8);
+}
+a:hover {
+  color: rgb(225, 13, 200);
 }
