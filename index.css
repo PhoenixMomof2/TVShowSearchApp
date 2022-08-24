@@ -1,18 +1,31 @@
 body {
   margin: 10px;
-  background-image: url(./images/tengyart-pYlSLXkduQg-unsplash.jpg);
+  background-image: url(./images/sci_fi_tunnel.jpg);
 }
 
 h1 {
-  color:white
+  color:rgb(18, 236, 15)
+  /* font-size: 30px; */
+}
+h2 {
+  color:rgb(230, 11, 11)
+}
+h3 {
+  color:rgb(230, 11, 11)
 }
 ul.no-bullets {
   list-style-type: none; /* Remove bullets */
   padding: 10px; 
   margin: 10px; 
 }
+.show-poster{
+  width: 300px;
+  height: 500px;
+  border: 1px solid black;
+  border-width: 10px 10px;
 
-.btn {
+}
+#filterBtn {
   border: none;
   outline: none;
   padding: 12px 16px;
@@ -20,12 +33,22 @@ ul.no-bullets {
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #ddd;
+#filterBtn:hover {
+  background-color: rgb(18, 236, 15);
 }
 
 /* Add a dark background to the active button */
-.btn.active {
-  background-color: #666;
+#filterBtn.active {
+  background-color: rgb(21, 46, 236);
   color: white;
+}
+#reset {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: rgb(231, 242, 10);
+  cursor: pointer;
+}
+#reset:hover {
+  background-color: rgb(18, 236, 15);
 }

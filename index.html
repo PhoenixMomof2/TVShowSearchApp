@@ -13,19 +13,20 @@
       <hr>
       <br>
         <div id="myBtnContainer">
-          <button class="btn"> Science-Fiction</button>
-          <button class="btn"> Drama</button>
-          <button class="btn"> Thriller</button>
-          <button class="btn"> Comedy</button>
-          <button class="btn"> Action</button>
-          <button class="btn"> Crime</button>
+          <button id="reset" onclick="fetchTvShows()">Reset Show List</button>
+          <button id="filterBtn" >Science-Fiction</button>
+          <button id="filterBtn" >Thriller</button>
+          <button id="filterBtn" >Comedy</button>
+          <button id="filterBtn" >Action</button>
+          <button id="filterBtn" >Crime</button>
+          <button id="filterBtn" >Drama</button>
         </div>
         <div>
         <ul id="show-list" style="list-style-type:none;"></ul>
         </div>
-      </div id="details"></div>
+      <div id="details"></div>
       <footer class="branding">
-        <small>&copy; 2022 <strong>SciFiShowApp</strong></small>
+        <small>&copy; 2022 <strong>TVShowSearchApp</strong></small>
       </footer> 
       <script src="./index.js"></script>
     </body>

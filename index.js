@@ -1,112 +1,94 @@
 const BASE_URL = 'http://api.tvmaze.com'
-// let data = []
-// let filteredData = []
+let reset = document.getElementById('reset')
+let filterBtn = document.querySelectorAll('#filterBtn')
+let filteredData = []
+
 
 window.addEventListener('DOMContentLoaded', () => {
-fetchTvShows() 
+fetchTvShows()
+reset.onclick = () => fetchTvShows()
 
 
-
-function fetchTvShows() {
+function fetchTvShows(){
    fetch(BASE_URL + `/shows`)
   .then(res => res.json())
   .then(data => {
         // console.log(data)
+        // add each show from JSON object to the DOM as li tags with links attached
+        // add an event listener to make sure the links are live on page load
         data.forEach(show => {
           const ul = document.getElementById('show-list')
           ul.innerHTML += `<li><a href="#" data-id="${show.id}">${show.name}</a></li>`
         })
         activateLinks()
       })
-      // filterShows(genres)
     }     
-    
+     
     const activateLinks = () => {
       const links = document.querySelectorAll('a')
       links.forEach((show) => {
         show.addEventListener('click', displayShowDetails)
       })
     }
-
     const displayShowDetails = (e) => {
-      console.log (e.target.dataset.id)
+      // console.log (e.target.dataset.id)
       const showDetails = document.getElementById('details')
       const ul = document.getElementById('show-list')
       ul.innerHTML = ''
       fetch(BASE_URL + `/shows/${e.target.dataset.id}`)
+      
       .then(res => res.json())
       .then(show => {
-        console.log(show)
-        
-          // const image = document.createElement('img')
-          // image.setAttribute('alt', 'show-image')
-          // image.setAttribute('src', `${show.image.medium}`)
-          
-          showDetails.innerHTML = `<h1>${show.name}</h1><br/>
-              <h2>Genres: </h2>
-              <p>${show.genres.join(", ")}</p>
+
+          showDetails.innerHTML = `<h1>${show.name}</h1>
               <h2>Summary: </h2>
               <p>${show.summary}</p>
+              <h3>Genres: </h2>
+              <p>${show.genres.join(", ")}</p>
+              <h3>Show Poster</h2>
+              <a href=${show.image.medium}><img src=${show.image.medium} class=show-poster alt=show-image></img></a>
               <h3>Official Site: </h3>
               <p>${show.officialSite}</p>`
-        
       })
     }
-  })
-  // <h2>Show Poster</h2>
-  // <p>${show.image}</p>
-  //    function filterShows(){
-  //     //  const filteredList = document.getElementById('show-list')
-  //        let ul = document.getElementById('show-list')
-  //        ul.innerHTML = ''
-        
-  //        filteredData.filter(show => {
-  //           ul.innerHTML += `<li><a href="#" data-id="${show.id}">${show.name}</a></li>`
-  //       })
-  //       console.log(filteredData)
-  //   }
 
-  //   let filterContainer = document.getElementById("myBtnContainer")
-  //   // let filterBtns = document.querySelectorAll('#btn')
-  //   filterContainer.addEventListener('click', filterShows)
+    filterBtn.forEach(btn => {
+      btn.addEventListener('click', () => {
+      // console.log(e.target)
+      let ul = document.getElementById('show-list')
+      ul.innerHTML =''
+      fetch(BASE_URL + `/shows`)
+      .then(res => res.json())
+      .then(data => {
+        
+        let filteredData = data.filter((show) => {return show.genres.includes(`${btn.innerText}`)})
+        console.log(filteredData)
+        filteredData.forEach(show =>
+          {
+            let ul = document.getElementById('show-list')
+            // ul.innerHTML =''
+            ul.innerHTML += `<li><a href="#" data-id="${show.id}">${show.name}</a></li>`
+            fetchTvShows(`${btn.innerText}`)
+            // reset.onclick = () => fetchTvShows(`${btn.innerText}`)
+          })
+        })
+        .catch(err => console.error(err))
+        
+      })
+      
+    })
+  })
   
 
-    
-     
-    //add other functions here
 
-            
-             
-    //       })
-    //     })
-    //   }) 
-      
+
+/* I want to be able to click on the filter button, filter the show
+  data based on genre, render filtered array to page with same link 
+  capabilities as the page load.
+*/
    
   
-    
-    
-
-// onmouseover = (event) => {
-//     console.log(event.target.dataset.id)
-//     const details = document.getElementById('details')
-//     const ul = document.getElementById('show-list')
-//     ul.innerHTML = ''
-
-//     fetch(BASE_URL + `/shows/${event.target.dataset.id}`)
-//     {
-//       method: 'GET',
-//       body: JSON.stringify(data),
-//       mode: 'no-cors'
-    
-//     then(_data => {
-//           details.innerHTML = `<h1>${show.name}</h1></br>
-//           <h2>Genres</h2>
-//           <p>${show.genres.join(",")}</p>
-//           <h2>Show Poster</h2>
-//           `
-//           <p>${show.image.medium}</p>` 
-//           })
-//      }
+  
 // address scoping issues by breaking up the functions
 // event.target is the a tag that is clicked
 // data-id adds the id index of the show so only one show is fetched with id is used.
