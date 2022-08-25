@@ -2,7 +2,7 @@ const BASE_URL = 'http://api.tvmaze.com'
 let reset = document.getElementById('reset')
 let filterBtn = document.querySelectorAll('#filterBtn')
 let filteredData = []
-
+let showData = []
 
 window.addEventListener('DOMContentLoaded', () => {
 fetchTvShows()
@@ -14,23 +14,29 @@ function fetchTvShows(){
   .then(res => res.json())
   .then(data => {
         // console.log(data)
-        // add each show from JSON object to the DOM as li tags with links attached
-        // add an event listener to make sure the links are live on page load
+        showData = Array.from(data)
         data.forEach(show => {
           const ul = document.getElementById('show-list')
-          ul.innerHTML += `<li><a href="#" data-id="${show.id}">${show.name}</a></li>`
+          ul.innerHTML += `<li><a href="#" data-id="${show.id}">${show.name}</a></li>`   
+          })  
+          activateLinks()
         })
-        activateLinks()
-      })
-    }     
+      }
+      
      
     const activateLinks = () => {
       const links = document.querySelectorAll('a')
       links.forEach((show) => {
+        console.log(show)
         show.addEventListener('click', displayShowDetails)
-      })
-    }
+        show.addEventListener('mouseover', displayImage(show))
+    })
+  }
+    // activateLinks()
+
     const displayShowDetails = (e) => {
+      // console.log (e.target)
+      // console.log (e.target.dataset)
       // console.log (e.target.dataset.id)
       const showDetails = document.getElementById('details')
       const ul = document.getElementById('show-list')
@@ -55,6 +61,9 @@ function fetchTvShows(){
     filterBtn.forEach(btn => {
       btn.addEventListener('click', () => {
       // console.log(e.target)
+      // debugger
+      let details = document.getElementById('details')
+      details.innerHTML=''
       let ul = document.getElementById('show-list')
       ul.innerHTML =''
       fetch(BASE_URL + `/shows`)
@@ -73,12 +82,16 @@ function fetchTvShows(){
         })
         fetchTvShows(`${btn.innerText}`)
       }) 
-    })
+    }) 
+    const displayImage = () => {
+        let popUpImage = new Image(100, 200);
+        popUpImage.src = show.image.medium
+        document.body.appendChild(popUpImage);
+        // fetchTvShows(`${show.image.medium}`)
+    }
   })
+
   
-
-
-
 /* I want to be able to click on the filter button, filter the show
   data based on genre, render filtered array to page with same link 
   capabilities as the page load.
