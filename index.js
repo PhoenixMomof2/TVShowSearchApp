@@ -19,21 +19,19 @@ function fetchTvShows(){
         data.forEach(show => {
           const ul = document.getElementById('show-list')
           ul.innerHTML += `<li><a href="#" data-id="${show.id}">${show.name}</a></li>`   
-          })  
+          }) 
           activateLinks()
-          displayImage()
         })
+        
       }
-      
      
     const activateLinks = () => {
       const links = document.querySelectorAll('a')
       links.forEach((show) => {
         // console.log(show)
-        show.addEventListener('click', displayShowDetails)    
+        show.addEventListener('click', displayShowDetails)   
       })
     }
-    // activateLinks()
 
     const displayShowDetails = (e) => {
       // console.log (e.target)
@@ -56,7 +54,7 @@ function fetchTvShows(){
               <a href=${show.image.medium}><img src=${show.image.medium} class=show-poster alt=show-image></img></a>
               <h3>Official Site: </h3>
               <p>${show.officialSite}</p>`
-      })
+      })  
     }
 
     filterBtn.forEach(btn => {
@@ -82,29 +80,21 @@ function fetchTvShows(){
           })
         })
         fetchTvShows(`${btn.innerText}`)
-      }) 
+      })
+      btn.addEventListener('mouseover', () => {
+        btn.style.backgroundColor = 'rgb(18, 236, 15)'
+      })
+      btn.addEventListener('mouseout', () => {
+        btn.style.backgroundColor = 'rgb(21, 46, 236)'
+      })
     }) 
-
-    const displayImage = (e) => {
-      console.log(e)
-      const links = document.querySelectorAll('a')
-      const imgHolder = document.getElementById('image')
-      links.forEach((link) => {
-        
-       link.addEventListener('mouseover', (e) => {
-        console.log(e.target)
-        let popUpImage = new Image(100, 200);
-        popUpImage.src = link.image.medium
-        imgHolder.append(popUpImage)
-       })
-    })
-  }
-})
+  })
 
   
-/* I want to be able to click on the filter button, filter the show
-  data based on genre, render filtered array to page with same link 
-  capabilities as the page load.
+  
+
+  
+/*I want to be able to back to the filtered list 
 */
    
   

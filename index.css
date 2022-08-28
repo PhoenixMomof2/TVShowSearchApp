@@ -1,6 +1,7 @@
 body {
   margin: 10px;
   background-image: url(./images/sci_fi_tunnel.jpg);
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
@@ -32,9 +33,9 @@ ul.no-bullets {
   cursor: pointer;
 }
 
-#filterBtn:hover {
+/* #filterBtn:hover {
   background-color: rgb(18, 236, 15);
-}
+} */
 
 /* Add a dark background to the active button */
 #filterBtn.active {
