@@ -14,12 +14,14 @@ function fetchTvShows(){
   .then(res => res.json())
   .then(data => {
         // console.log(data)
-        showData = Array.from(data)
+        showData=(Array.from(data))
+        // console.log(showData)
         data.forEach(show => {
           const ul = document.getElementById('show-list')
           ul.innerHTML += `<li><a href="#" data-id="${show.id}">${show.name}</a></li>`   
           })  
           activateLinks()
+          displayImage()
         })
       }
       
@@ -27,11 +29,10 @@ function fetchTvShows(){
     const activateLinks = () => {
       const links = document.querySelectorAll('a')
       links.forEach((show) => {
-        console.log(show)
-        show.addEventListener('click', displayShowDetails)
-        show.addEventListener('mouseover', displayImage(show))
-    })
-  }
+        // console.log(show)
+        show.addEventListener('click', displayShowDetails)    
+      })
+    }
     // activateLinks()
 
     const displayShowDetails = (e) => {
@@ -83,13 +84,22 @@ function fetchTvShows(){
         fetchTvShows(`${btn.innerText}`)
       }) 
     }) 
-    const displayImage = () => {
+
+    const displayImage = (e) => {
+      console.log(e)
+      const links = document.querySelectorAll('a')
+      const imgHolder = document.getElementById('image')
+      links.forEach((link) => {
+        
+       link.addEventListener('mouseover', (e) => {
+        console.log(e.target)
         let popUpImage = new Image(100, 200);
-        popUpImage.src = show.image.medium
-        document.body.appendChild(popUpImage);
-        // fetchTvShows(`${show.image.medium}`)
-    }
-  })
+        popUpImage.src = link.image.medium
+        imgHolder.append(popUpImage)
+       })
+    })
+  }
+})
 
   
 /* I want to be able to click on the filter button, filter the show
