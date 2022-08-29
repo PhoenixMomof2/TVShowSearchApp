@@ -2,6 +2,7 @@ body {
   margin: 10px;
   background-image: url(./images/sci_fi_tunnel.jpg);
   font-family: 'Poppins', sans-serif;
+  
 }
 
 h1 {
@@ -26,18 +27,14 @@ ul.no-bullets {
 
 }
 #filterBtn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: blue;
-  cursor: pointer;
+  font-size: 16px;
+  width: 100px;
+  height: 50px;
+  background: rgb(21, 46, 236);
+  border-radius: 80px / 40px;
+  border: 2px solid white;
 }
 
-/* #filterBtn:hover {
-  background-color: rgb(18, 236, 15);
-} */
-
-/* Add a dark background to the active button */
 #filterBtn.active {
   background-color: rgb(21, 46, 236);
   color: white;
@@ -45,7 +42,7 @@ ul.no-bullets {
 #reset {
   border: none;
   outline: none;
-  padding: 12px 16px;
+  padding: 10px 10px;
   background-color: rgb(231, 242, 10);
   cursor: pointer;
 }

@@ -1,17 +1,20 @@
-1 - description of app:
+DESCRIPTION:
 
-The TV Show search app allows you to see a list of all the TV shows from the TV Maze API.  
+The TV Show search app allows you to see a list of all the TV shows from the TV Maze AP: http://api.tvmaze.com/shows
+This app allows you to filter tv shows by genre category and to display details pertaining to each show.
 
-2 - url of the repo
+HOW TO USE THE APP: 
+Fork and clone the following repository to your computer.  Open index.html in your browser to explore the app.
+https://github.com/PhoenixMomof2/TVShowSearchApp.git
 
-http://api.tvmaze.com/shows
+When you first open the page, you will see several buttons at the top. There is a reset button located at the top left of the page that will allow you to retrieve the original full list of shows after utilizing the filter buttons.
 
-3 - How to run it!
-
-When you first open the page, you will see several buttons at the top. There is a button to reset the page and get the full list of shows. 
-
-The other buttons, each labeled for a particular genre, allow you to filter through the show list and only return a list of shows with your genre interest.  When you click on each show, you will see more information.  
+The filter buttons, each labeled for a particular genre, allow you to filter through the show list and only return a list of shows with your genre interest.  The user can click on any show whether it is from the original list of the filtered list, you will see more information.  
 
 This information includes the show name, genres, summary, show poster, and the show's official site. You are able to reset the show list by clicking the "reset show list" button.
 
-Add something about forking and cloning.
+FUTURE IMPROVEMENTS:
+1- Display the shows in alphabetical order.
+2- Create a button that allows you to go back to your filtered list without clicking the filter button.
+3- Create a modal that shows the Network and air time for any shows still showing.
+
