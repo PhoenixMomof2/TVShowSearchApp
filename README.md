@@ -11,7 +11,7 @@ When you first open the page, you will see several buttons at the top. There is 
 
 The filter buttons, each labeled for a particular genre, allow you to filter through the show list and only return a list of shows with your genre interest.  The user can click on any show whether it is from the original list of the filtered list, you will see more information.  
 
-This information includes the show name, genres, summary, show poster, and the show's official site. You are able to reset the show list by clicking the "reset show list" button.
+This information includes the show name, genres, summary, show poster, and the show's official site. You are able to reset the show list by clicking the "reset" button.
 
 FUTURE IMPROVEMENTS:
 1- Display the shows in alphabetical order.

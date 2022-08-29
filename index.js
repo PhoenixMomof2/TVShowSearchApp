@@ -94,11 +94,9 @@ function fetchTvShows(){
   
 
   
-/*I want to be able to back to the filtered list 
+/*I want to be able to back to the filtered list after display details is called.
+Maybe create a reset button.
 */
-   
-  
-  
 // address scoping issues by breaking up the functions
 // event.target is the a tag that is clicked
 // data-id adds the id index of the show so only one show is fetched with id is used.

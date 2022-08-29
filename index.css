@@ -1,6 +1,6 @@
 body {
   margin: 10px;
-  background-image: url(./images/sci_fi_tunnel.jpg);
+  background-image: url(./images/loewe-technology-BRfpQ4sTcq8-unsplash\ \(1\).jpg);
   font-family: 'Poppins', sans-serif;
   
 }
@@ -28,8 +28,8 @@ ul.no-bullets {
 }
 #filterBtn {
   font-size: 16px;
-  width: 100px;
-  height: 50px;
+  width: 120px;
+  height: 60px;
   background: rgb(21, 46, 236);
   border-radius: 80px / 40px;
   border: 2px solid white;
@@ -37,18 +37,23 @@ ul.no-bullets {
 
 #filterBtn.active {
   background-color: rgb(21, 46, 236);
-  color: white;
 }
 #reset {
-  border: none;
-  outline: none;
+  font-size: 16px;
+  width: 120px;
+  height: 60px;
   padding: 10px 10px;
-  background-color: rgb(231, 242, 10);
-  cursor: pointer;
+  border-radius: 80px / 40px;
+  border: 2px solid black;
+  background-color: yellow;
 }
 #reset:hover {
   background-color: rgb(193, 42, 8);
 }
 a:hover {
   color: rgb(225, 13, 200);
+}
+
+a {
+color:aqua
 }
