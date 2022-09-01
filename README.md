@@ -3,6 +3,9 @@ DESCRIPTION:
 The TV Show search app allows you to see a list of all the TV shows from the TV Maze AP: http://api.tvmaze.com/shows
 This app allows you to filter tv shows by genre category and to display details pertaining to each show.
 
+VIDEO WALK-THROUGH OF THE APP:
+https://www.youtube.com/watch?v=owoN-BG4y60
+
 HOW TO USE THE APP: 
 Fork and clone the following repository to your computer.  Open index.html in your browser to explore the app.
 https://github.com/PhoenixMomof2/TVShowSearchApp.git
