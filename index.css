@@ -57,3 +57,12 @@ a:hover {
 a {
 color:aqua
 }
+
+p {
+  color: white;
+  font-style: bold;
+}
+
+footer{
+  color: white;
+}
