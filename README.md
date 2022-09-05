@@ -21,3 +21,7 @@ FUTURE IMPROVEMENTS:
 2- Create a button that allows you to go back to your filtered list without clicking the filter button.
 3- Create a modal that shows the Network and air time for any shows still showing.
 
+BLOG:
+I am adding my first "technical" blog link here.  It will give a bit of insight into the journey that brought me to this project completion.
+
+https://dev.to/phoenixmomof2/where-to-now-code-school-14df
