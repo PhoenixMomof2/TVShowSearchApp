@@ -24,4 +24,4 @@ FUTURE IMPROVEMENTS:
 BLOG:
 I am adding my first "technical" blog link here.  It will give a bit of insight into the journey that brought me to this project completion.
 
-https://dev.to/phoenixmomof2/where-to-now-code-school-14df
+https://dev.to/phoenixmomof2/understanding-variable-scope-n2o
